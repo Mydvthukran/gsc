@@ -1,0 +1,91 @@
+.login-page {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; padding: 24px;
+  background-color: var(--bg-primary);
+}
+
+/* Editorial Background */
+.login-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(var(--text-tertiary) 1px, transparent 1px);
+  background-size: 40px 40px; opacity: 0.1;
+}
+.bg-line {
+  position: absolute; top: 50%; left: 0; width: 100%; height: 1px;
+  background: var(--border-color); opacity: 0.1;
+}
+
+.login-container {
+  position: relative; z-index: 1; width: 100%; max-width: 480px;
+  background: var(--bg-primary); border: 2px solid var(--border-color);
+  padding: 64px 48px; text-align: center; border-radius: 0;
+  box-shadow: 16px 16px 0px rgba(0,0,0,1);
+}
+
+.login-logo { margin-bottom: 48px; }
+.login-logo-mark {
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.3em;
+  color: #fff; background: #000; padding: 4px 12px;
+  display: inline-block; margin-bottom: 16px;
+}
+.login-logo h1 { font-size: 3rem; font-weight: 500; letter-spacing: -2px; line-height: 1; margin-bottom: 8px; }
+.login-logo .dot { color: var(--accent-primary); }
+.login-tagline { font-size: 0.9rem; color: var(--text-secondary); font-style: italic; }
+
+.login-sdg-row { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; }
+.login-sdg-chip {
+  display: flex; align-items: center; gap: 8px; padding: 6px 12px;
+  border-radius: 0; font-size: 0.75rem; font-weight: 700; color: var(--text-primary);
+  background: var(--bg-secondary); border: 1px solid var(--border-color);
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.sdg-chip-num { font-weight: 900; color: var(--accent-primary); }
+
+.login-features {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 48px;
+}
+.login-feature {
+  display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 24px 12px;
+  background: var(--bg-primary); border: 1px solid var(--bg-tertiary); border-radius: 0;
+  transition: all var(--transition-fast);
+}
+.login-feature:hover { border-color: var(--border-color); background: var(--bg-secondary); transform: translate(-2px, -2px); box-shadow: 4px 4px 0px var(--border-color); }
+.feature-icon { color: var(--accent-primary); }
+.feature-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); }
+
+.login-btn {
+  width: 100%; padding: 18px 24px; border-radius: 0;
+  font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em;
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  transition: all var(--transition-base); border: 2px solid var(--border-color);
+}
+.login-btn:hover { transform: translate(-4px, -4px); box-shadow: 8px 8px 0px rgba(0,0,0,1); }
+
+.login-error { color: var(--accent-rose); font-size: 0.8rem; margin-top: 24px; font-weight: 700; text-transform: uppercase; }
+
+.login-demo-note {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  margin-top: 24px; font-size: 0.7rem; color: var(--text-tertiary); font-weight: 700;
+  border: 1px solid var(--bg-tertiary); padding: 12px 20px; text-transform: uppercase; letter-spacing: 0.05em;
+}
+
+.login-footer { margin-top: 56px; border-top: 1px solid var(--bg-tertiary); padding-top: 24px; }
+.login-footer p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; }
+.login-tech-icons { display: flex; gap: 20px; justify-content: center; color: var(--text-tertiary); }
+.login-tech-icons span:hover { color: var(--text-primary); cursor: pointer; }
+
+@media(max-width: 640px) {
+  .login-container { padding: 48px 32px; box-shadow: 8px 8px 0px rgba(0,0,0,1); }
+  .login-logo h1 { font-size: 2.4rem; }
+  .login-sdg-row { flex-wrap: wrap; }
+}
+
+@media(max-width: 480px) {
+  .login-container { padding: 40px 20px; }
+  .login-logo h1 { font-size: 2.2rem; }
+  .login-logo-mark { letter-spacing: 0.1em; font-size: 0.7rem; }
+  .login-features { grid-template-columns: 1fr; gap: 8px; }
+  .login-feature { padding: 16px; }
+  .login-tagline { font-size: 0.8rem; }
+}

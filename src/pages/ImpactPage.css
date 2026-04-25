@@ -1,0 +1,55 @@
+.impact-page { display: flex; flex-direction: column; gap: 24px; }
+
+.sdg-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.sdg-card { padding: 32px; border-radius: 0; }
+.sdg-card:hover { transform: translate(-4px, -4px); box-shadow: var(--shadow-lg); border-color: var(--accent-primary); }
+.sdg-card-header { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; }
+.sdg-number {
+  width: 64px; height: 64px; border-radius: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; font-weight: 500; color: white; flex-shrink: 0;
+  font-family: var(--font-serif); border: 2px solid #000;
+}
+.sdg-12 { background: #0A0A0A; }
+.sdg-13 { background: var(--accent-primary); }
+.sdg-card-header h3 { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.5px; }
+.sdg-card-header p { font-size: 0.8rem; color: var(--text-tertiary); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.sdg-score-bar { width: 100%; height: 6px; background: var(--bg-tertiary); border-radius: 0; overflow: hidden; margin-bottom: 12px; }
+.sdg-score-fill { height: 100%; transition: width 1s ease; }
+.sdg-score-label { font-size: 0.75rem; color: var(--text-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+
+.sdg-impacts { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.sdg-impact-item { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; color: var(--text-secondary); }
+.impact-icon { color: var(--text-primary); }
+
+.efficiency-card { padding: 40px; border-radius: 0; }
+.efficiency-display { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+
+.efficiency-ring { flex-shrink: 0; }
+.ring-svg { width: 160px; height: 160px; }
+.ring-progress { transition: stroke-dasharray 1.5s ease; }
+
+.efficiency-breakdown { flex: 1; display: flex; flex-direction: column; gap: 20px; min-width: 300px; }
+.breakdown-item { display: flex; align-items: center; gap: 20px; }
+.breakdown-label { font-size: 0.85rem; color: var(--text-tertiary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; min-width: 160px; }
+.breakdown-item .progress-bar { flex: 1; height: 4px; }
+.breakdown-value { font-size: 1.1rem; font-weight: 500; min-width: 80px; text-align: right; color: var(--text-primary); }
+
+.impact-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.impact-chart { padding: 32px; border-radius: 0; }
+
+@media(max-width: 1024px) {
+  .sdg-cards, .impact-charts { grid-template-columns: 1fr; }
+  .efficiency-display { justify-content: center; text-align: center; gap: 32px; }
+  .efficiency-breakdown { min-width: 100%; }
+  .breakdown-label { min-width: 120px; font-size: 0.75rem; }
+  .sdg-card, .efficiency-card, .impact-chart { padding: 24px; }
+}
+
+@media(max-width: 640px) {
+  .sdg-card-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .sdg-number { width: 48px; height: 48px; font-size: 1.4rem; }
+  .breakdown-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .breakdown-label { min-width: auto; }
+  .breakdown-value { min-width: auto; text-align: left; }
+}

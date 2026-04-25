@@ -1,0 +1,16 @@
+.app-layout { display: flex; min-height: 100vh; position: relative; }
+.main-area { flex: 1; margin-left: var(--sidebar-width); transition: margin-left var(--transition-base); display: flex; flex-direction: column; min-width: 0; }
+.main-content { flex: 1; padding: 32px 40px; overflow-y: auto; background: var(--bg-primary); }
+
+.sidebar-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 45;
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+@media(max-width: 1024px) {
+  .main-area { margin-left: 0; }
+  .main-content { padding: 24px 20px; }
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
